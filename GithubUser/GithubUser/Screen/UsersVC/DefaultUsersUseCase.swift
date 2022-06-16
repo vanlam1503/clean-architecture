@@ -1,0 +1,29 @@
+//
+//  UsersUseCase.swift
+//  GithubUser
+//
+//  Created by Lam Le on 15/06/2022.
+//
+
+import Foundation
+import RxSwift
+import RxCocoa
+
+protocol UserUseCase {
+    func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>
+}
+
+
+struct DefaultUsersUseCase: UserUseCase {
+
+    let repository: GithubServiceRepository
+
+    init(repository: GithubServiceRepository) {
+        self.repository = repository
+    }
+
+    func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>> {
+        repository.fetchUsers()
+    }
+}
+

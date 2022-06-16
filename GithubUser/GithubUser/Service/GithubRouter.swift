@@ -15,7 +15,7 @@ enum GithubRouter: Router {
     var urlString: String {
         switch self {
         case .users:
-            return "/users"
+            return Api.users
         }
     }
 

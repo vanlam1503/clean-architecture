@@ -19,9 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func configWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = UsersViewController()
-        let navi = UINavigationController(rootViewController: vc)
-        window?.rootViewController = navi
-        window?.makeKeyAndVisible()
+        Application.shared.configure(in: window)
     }
 }
