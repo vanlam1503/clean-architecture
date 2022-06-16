@@ -11,6 +11,7 @@ import Foundation
 
 protocol GithubServiceRepository {
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>
+    func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>>
 }
 
 struct GithubService: GithubServiceRepository {
@@ -26,8 +27,21 @@ struct GithubService: GithubServiceRepository {
         return apiClient.rx.makeCall(router).map { result in
             switch result {
             case .success(let data):
-                let values = try! JSONDecoder().decode([UserDTO].self, from: data)
-                return .success(values)
+                let userDTOs = try! JSONDecoder().decode([UserDTO].self, from: data)
+                return .success(userDTOs)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+    }
+
+    func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>> {
+        let router = GithubRouter.user(login: login)
+        return apiClient.rx.makeCall(router).map { result in
+            switch result {
+            case .success(let data):
+                let userDTO = try! JSONDecoder().decode(UserDTO.self, from: data)
+                return .success(userDTO)
             case .failure(let error):
                 return .failure(error)
             }

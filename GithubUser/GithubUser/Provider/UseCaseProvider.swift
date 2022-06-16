@@ -9,6 +9,7 @@ import Foundation
 
 protocol UseCaseProvider {
     func makeUserUseCase() -> UserUseCase
+    func makeUserDetailUseCase() -> UserDetailUseCase
 }
 
 struct DefaultsUseCaseProvider: UseCaseProvider {
@@ -20,8 +21,12 @@ struct DefaultsUseCaseProvider: UseCaseProvider {
     }
 
     func makeUserUseCase() -> UserUseCase {
-
         let service = GithubService(apiClient)
         return DefaultUsersUseCase(repository: service)
+    }
+
+    func makeUserDetailUseCase() -> UserDetailUseCase {
+        let service = GithubService(apiClient)
+        return DefaultUserDetailUseCase(repository: service)
     }
 }

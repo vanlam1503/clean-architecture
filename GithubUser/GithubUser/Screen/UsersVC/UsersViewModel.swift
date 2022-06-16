@@ -22,9 +22,9 @@ final class UsersViewModel: ViewModelType {
 
     // MARK: - Input
     struct Input {
-        var trigger: Driver<Void>
-        var refresh: Driver<Void>
-        var selected: Driver<IndexPath>
+        let trigger: Driver<Void>
+        let refresh: Driver<Void>
+        let selected: Driver<IndexPath>
     }
 
     // MARK: - Output

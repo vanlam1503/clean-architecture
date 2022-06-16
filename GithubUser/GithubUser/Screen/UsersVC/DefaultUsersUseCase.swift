@@ -13,7 +13,6 @@ protocol UserUseCase {
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>
 }
 
-
 struct DefaultUsersUseCase: UserUseCase {
 
     let repository: GithubServiceRepository

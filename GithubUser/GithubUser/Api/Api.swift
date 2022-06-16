@@ -7,22 +7,8 @@
 
 import Foundation
 
-@propertyWrapper
 struct Api {
-
-    private let baseURL = "https://api.github.com"
-    private let path: String
-
-    init(path: String) {
-        self.path = path
-    }
-
-    var wrappedValue: String {
-        return baseURL / path
-    }
-
-    // Define
-    @Api(path: "users") static var users
+    static let baseURL = "https://api.github.com"
 }
 
 infix operator / : AdditionPrecedence

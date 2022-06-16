@@ -19,7 +19,7 @@ struct Application {
 
     func configure(in window: UIWindow?) {
         let navi = UINavigationController()
-        let navigator = DefaultUserNavigator(navi: navi)
+        let navigator = DefaultUserNavigator(navi: navi, useCaseProvider: userCaseProvider)
         let viewModel = UsersViewModel(navigator: navigator, useCase: userCaseProvider.makeUserUseCase())
         let vc = UsersViewController(viewModel: viewModel)
         navi.setViewControllers([vc], animated: false)

@@ -14,8 +14,8 @@ typealias Parameters = Alamofire.Parameters
 typealias HTTPHeaders = Alamofire.HTTPHeaders
 typealias URLEncoding = Alamofire.URLEncoding
 
-protocol Router: URLRequestConvertible {
-    var urlString: String { get }
+protocol Router: URLRequestConvertible, URLConvertible {
+    var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders? { get }
     var encoding: ParameterEncoding { get }
@@ -24,8 +24,16 @@ protocol Router: URLRequestConvertible {
 
 extension Router {
 
+    func asURL() throws -> URL {
+        let urlString = Api.baseURL + path
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidUrl
+        }
+        return url
+    }
+
     func asURLRequest() throws -> URLRequest {
-        var request = try URLRequest(url: urlString, method: method, headers: headers)
+        let request = try URLRequest(url: try asURL(), method: method, headers: headers)
         return try encoding.encode(request, with: parameters)
     }
 }

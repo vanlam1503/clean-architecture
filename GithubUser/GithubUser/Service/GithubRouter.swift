@@ -11,38 +11,41 @@ import Alamofire
 enum GithubRouter: Router {
 
     case users
+    case user(login: String)
 
-    var urlString: String {
+    var path: String {
         switch self {
         case .users:
-            return Api.users
+            return "/users"
+        case .user(let login):
+            return  "/users/\(login)"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .users:
+        case .users, .user:
             return HTTPMethod.get
         }
     }
 
     var headers: HTTPHeaders? {
         switch self {
-        case .users:
+        case .users, .user:
             return [:]
         }
     }
 
     var encoding: ParameterEncoding {
         switch self {
-        case .users:
+        case .users, .user:
             return URLEncoding.default
         }
     }
 
     var parameters: Parameters {
         switch self {
-        case .users:
+        case .users, .user:
             return [:]
         }
     }
