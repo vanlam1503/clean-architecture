@@ -28,3 +28,10 @@ extension ObservableType {
         }
     }
 }
+
+extension SharedSequenceConvertibleType {
+
+    func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
+        return map { _ in }
+    }
+}

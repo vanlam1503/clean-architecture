@@ -58,18 +58,17 @@ final class UsersViewController: UIViewController {
         )
 
         let output = viewModel.transform(input: input)
-        output.users
-            .drive(onNext: { users in
-                print(users)
-            })
-            .disposed(by: bag)
 
         output.users
             .drive(tableView.rx.items(cellIdentifier: "UsersTableCell", cellType: UsersTableCell.self)) { (_, userDTO, cell) in
                 cell.updateView(userDTO: userDTO)
             }
             .disposed(by: bag)
-        
+
+        Driver.merge(output.users.mapToVoid(), output.error.mapToVoid())
+            .drive(onNext: { [weak self ] in self?.refreshControl.endRefreshing() })
+            .disposed(by: bag)
+
         output
             .itemSelected
             .drive()
