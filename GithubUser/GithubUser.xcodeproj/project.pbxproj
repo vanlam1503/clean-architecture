@@ -35,6 +35,8 @@
 		FE9CE400285AAB880014B2CF /* UsersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CE3FE285AAB880014B2CF /* UsersTableCell.swift */; };
 		FE9CE401285AAB880014B2CF /* UsersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9CE3FF285AAB880014B2CF /* UsersTableCell.xib */; };
 		FE9CE403285AAEBF0014B2CF /* TableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CE402285AAEBF0014B2CF /* TableView+Extensions.swift */; };
+		FE9CE406285AC30C0014B2CF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FE9CE405285AC30C0014B2CF /* SDWebImage */; };
+		FE9CE408285AC34E0014B2CF /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CE407285AC34E0014B2CF /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,7 @@
 		FE9CE3FE285AAB880014B2CF /* UsersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableCell.swift; sourceTree = "<group>"; };
 		FE9CE3FF285AAB880014B2CF /* UsersTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableCell.xib; sourceTree = "<group>"; };
 		FE9CE402285AAEBF0014B2CF /* TableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extensions.swift"; sourceTree = "<group>"; };
+		FE9CE407285AC34E0014B2CF /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			files = (
 				FE9CE3D6285A165C0014B2CF /* RxSwift in Frameworks */,
 				FE9CE3D4285A165C0014B2CF /* RxCocoa in Frameworks */,
+				FE9CE406285AC30C0014B2CF /* SDWebImage in Frameworks */,
 				FE9CE3D1285A164A0014B2CF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,13 +108,13 @@
 				FE9CE3D7285A1ABC0014B2CF /* Api */,
 				FE9CE3DA285A1E870014B2CF /* App */,
 				FE9CE3A4285A09800014B2CF /* AppDelegate.swift */,
-				FE9CE3AD285A09830014B2CF /* Assets.xcassets */,
 				FE9CE3EB285A22320014B2CF /* Extensions */,
 				FE9CE3C1285A0AB10014B2CF /* Manager */,
 				FE9CE3E8285A22180014B2CF /* Model */,
 				FE9CE3BC285A09B70014B2CF /* Screen */,
 				FE9CE3BE285A0AA10014B2CF /* Service */,
 				FE9CE3E5285A20340014B2CF /* ViewModelType */,
+				FE9CE3AD285A09830014B2CF /* Assets.xcassets */,
 				FE9CE3B2285A09830014B2CF /* Info.plist */,
 				FE9CE3AF285A09830014B2CF /* LaunchScreen.storyboard */,
 			);
@@ -197,6 +201,7 @@
 				FE9CE3EE285A24970014B2CF /* ObservableConvertibleType+Extensions.swift */,
 				FE9CE3F4285A33080014B2CF /* ObservableType+Extensions.swift */,
 				FE9CE402285AAEBF0014B2CF /* TableView+Extensions.swift */,
+				FE9CE407285AC34E0014B2CF /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				FE9CE3D0285A164A0014B2CF /* Alamofire */,
 				FE9CE3D3285A165C0014B2CF /* RxCocoa */,
 				FE9CE3D5285A165C0014B2CF /* RxSwift */,
+				FE9CE405285AC30C0014B2CF /* SDWebImage */,
 			);
 			productName = GithubUser;
 			productReference = FE9CE3A1285A09800014B2CF /* GithubUser.app */;
@@ -270,6 +276,7 @@
 			packageReferences = (
 				FE9CE3CF285A164A0014B2CF /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FE9CE3D2285A165C0014B2CF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FE9CE404285AC30C0014B2CF /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = FE9CE3A2285A09800014B2CF /* Products */;
 			projectDirPath = "";
@@ -301,6 +308,7 @@
 			files = (
 				FE9CE3F7285A350A0014B2CF /* Application.swift in Sources */,
 				FE9CE3E4285A201A0014B2CF /* UsersViewModel.swift in Sources */,
+				FE9CE408285AC34E0014B2CF /* UIImageView+Extensions.swift in Sources */,
 				FE9CE3E2285A1F380014B2CF /* DefaultUsersUseCase.swift in Sources */,
 				FE9CE3F1285A25910014B2CF /* GithubService.swift in Sources */,
 				FE9CE3D9285A1AC50014B2CF /* Api.swift in Sources */,
@@ -547,6 +555,14 @@
 				kind = branch;
 			};
 		};
+		FE9CE404285AC30C0014B2CF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -564,6 +580,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE9CE3D2285A165C0014B2CF /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		FE9CE405285AC30C0014B2CF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE9CE404285AC30C0014B2CF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -43,6 +43,7 @@ final class UsersViewController: UIViewController {
         tableView.register(forCell: UsersTableCell.self)
         tableView.rowHeight = Config.rowHeight
         tableView.refreshControl = refreshControl
+        tableView.contentInset = Config.contentInset
     }
 
     private func configNavigationBar() {
@@ -84,5 +85,6 @@ final class UsersViewController: UIViewController {
 extension UsersViewController {
     struct Config {
         static let rowHeight: CGFloat = 80
+        static let contentInset: UIEdgeInsets = .init(top: 10, left: 0, bottom: 10, right: 0)
     }
 }

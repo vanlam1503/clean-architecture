@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class UsersTableCell: UITableViewCell {
 
@@ -18,6 +19,11 @@ final class UsersTableCell: UITableViewCell {
         configView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configAvatarImageView()
+    }
+
     private func configView() {
         configAvatarImageView()
     }
@@ -28,6 +34,7 @@ final class UsersTableCell: UITableViewCell {
     }
 
     func updateView(userDTO: UserDTO) {
+        avatarImageView.setImage(userDTO.avatar)
         userNameLabel.text = userDTO.userName
         profileLinkLabel.text = userDTO.githubProfile
     }
