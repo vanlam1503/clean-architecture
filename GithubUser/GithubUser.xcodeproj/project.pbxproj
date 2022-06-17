@@ -204,7 +204,7 @@
 		FE9CE3BC285A09B70014B2CF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				FEA782A4285B1821000A7063 /* UserDetail */,
+				FEA782A4285B1821000A7063 /* UserDetail1 */,
 				FE9CE3BD285A09BE0014B2CF /* UsersVC */,
 			);
 			path = Screen;
@@ -293,7 +293,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		FEA782A4285B1821000A7063 /* UserDetail */ = {
+		FEA782A4285B1821000A7063 /* UserDetail1 */ = {
 			isa = PBXGroup;
 			children = (
 				FEA782B1285B415B000A7063 /* UserDetailStatisticsView */,
@@ -302,7 +302,7 @@
 				FEA782A6285B1C58000A7063 /* UserDetailViewController.xib */,
 				FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */,
 			);
-			path = UserDetail;
+			path = UserDetail1;
 			sourceTree = "<group>";
 		};
 		FEA782B1285B415B000A7063 /* UserDetailStatisticsView */ = {
