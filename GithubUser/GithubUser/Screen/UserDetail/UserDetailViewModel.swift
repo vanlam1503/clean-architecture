@@ -45,7 +45,13 @@ final class UserDetailViewModel: ViewModelType {
         let avatar = userDTO.map(\.avatar)
         let userName = userDTO.map(\.userName)
         let location = userDTO.map(\.location)
-        let bio = userDTO.map(\.bio)
+        let bio = userDTO.map { userDTO -> String in
+            if userDTO.bio.isEmpty {
+                return "[No Information]"
+            } else {
+                return userDTO.bio
+            }
+        }
         let publicRepos = userDTO.map(\.publicRepos)
         let followers = userDTO.map(\.followers)
         let following = userDTO.map(\.following)

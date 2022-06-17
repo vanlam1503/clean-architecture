@@ -44,10 +44,15 @@ final class UserDetailViewController: UIViewController {
     private func configView() {
         configNavigationView()
         configFooterView()
+        configAvatarView()
     }
 
     private func configNavigationView() {
         title = App.String.UserDetail.profile
+    }
+
+    private func configAvatarView() {
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.size.height / 2
     }
 
     private func configFooterView() {
