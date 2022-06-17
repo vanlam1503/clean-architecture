@@ -43,6 +43,8 @@
 		FEA782AC285B1CED000A7063 /* UserDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782AB285B1CED000A7063 /* UserDetailNavigator.swift */; };
 		FEA782AE285B1CFD000A7063 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */; };
 		FEA782B0285B2AD8000A7063 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782AF285B2AD8000A7063 /* UIView+Extensions.swift */; };
+		FEA782B3285B41A6000A7063 /* UserDetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */; };
+		FEA782B5285B41B3000A7063 /* UserDetailStatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		FEA782AB285B1CED000A7063 /* UserDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailNavigator.swift; sourceTree = "<group>"; };
 		FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		FEA782AF285B2AD8000A7063 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailStatisticsView.swift; sourceTree = "<group>"; };
+		FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailStatisticsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		FEA782A4285B1821000A7063 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FEA782B1285B415B000A7063 /* UserDetailStatisticsView */,
 				FEA782AB285B1CED000A7063 /* UserDetailNavigator.swift */,
 				FEA782A9285B1CDD000A7063 /* UserDetailUseCase.swift */,
 				FEA782A5285B1C58000A7063 /* UserDetailViewController.swift */,
@@ -247,6 +252,15 @@
 				FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */,
 			);
 			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		FEA782B1285B415B000A7063 /* UserDetailStatisticsView */ = {
+			isa = PBXGroup;
+			children = (
+				FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */,
+				FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */,
+			);
+			path = UserDetailStatisticsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9CE3B1285A09830014B2CF /* LaunchScreen.storyboard in Resources */,
+				FEA782B5285B41B3000A7063 /* UserDetailStatisticsView.xib in Resources */,
 				FEA782A8285B1C58000A7063 /* UserDetailViewController.xib in Resources */,
 				FE9CE401285AAB880014B2CF /* UsersTableCell.xib in Resources */,
 				FE9CE3BB285A09B10014B2CF /* UsersViewController.xib in Resources */,
@@ -350,6 +365,7 @@
 				FE9CE3A5285A09800014B2CF /* AppDelegate.swift in Sources */,
 				FEA782AC285B1CED000A7063 /* UserDetailNavigator.swift in Sources */,
 				FE9CE403285AAEBF0014B2CF /* TableView+Extensions.swift in Sources */,
+				FEA782B3285B41A6000A7063 /* UserDetailStatisticsView.swift in Sources */,
 				FE9CE3BA285A09B10014B2CF /* UsersViewController.swift in Sources */,
 				FE9CE3EF285A24970014B2CF /* ObservableConvertibleType+Extensions.swift in Sources */,
 				FE9CE3F5285A33080014B2CF /* ObservableType+Extensions.swift in Sources */,

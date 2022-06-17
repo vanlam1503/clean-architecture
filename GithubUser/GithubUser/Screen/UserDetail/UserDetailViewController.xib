@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="avatarImageView" destination="M4L-5p-IS9" id="e5z-S1-re1"/>
                 <outlet property="bioLabel" destination="jWt-dy-Dtv" id="tkO-B8-mKU"/>
+                <outlet property="footerView" destination="GOu-qJ-2dO" id="gOu-Me-Dup"/>
                 <outlet property="locationLabel" destination="Ioe-1y-gcJ" id="IkJ-xm-gzv"/>
                 <outlet property="nameLabel" destination="UXa-ED-Y8T" id="XfA-Og-Rxo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,7 +42,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-1y-gcJ">
                             <rect key="frame" x="90" y="46" width="304" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -60,18 +61,18 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCt-U9-hQC" userLabel="MiddleView">
-                    <rect key="frame" x="0.0" y="124" width="414" height="100"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="70"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNK-fq-2TA">
-                            <rect key="frame" x="16" y="8" width="51" height="21"/>
+                            <rect key="frame" x="16" y="8" width="378" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWt-dy-Dtv">
-                            <rect key="frame" x="16" y="39" width="32.5" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[bio:]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWt-dy-Dtv">
+                            <rect key="frame" x="16" y="39" width="378" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -80,12 +81,14 @@
                         <constraint firstItem="DNK-fq-2TA" firstAttribute="top" secondItem="dCt-U9-hQC" secondAttribute="top" constant="8" id="9a8-jL-Col"/>
                         <constraint firstItem="jWt-dy-Dtv" firstAttribute="leading" secondItem="DNK-fq-2TA" secondAttribute="leading" id="DuO-Xl-cka"/>
                         <constraint firstItem="jWt-dy-Dtv" firstAttribute="top" secondItem="DNK-fq-2TA" secondAttribute="bottom" constant="10" id="ETt-ay-JG5"/>
-                        <constraint firstAttribute="height" constant="100" id="Tst-gc-ocX"/>
+                        <constraint firstAttribute="height" constant="70" id="Tst-gc-ocX"/>
+                        <constraint firstAttribute="trailing" secondItem="jWt-dy-Dtv" secondAttribute="trailing" constant="20" id="jmL-Nt-Ygf"/>
+                        <constraint firstAttribute="trailing" secondItem="DNK-fq-2TA" secondAttribute="trailing" constant="20" id="lpu-XC-sdI"/>
                         <constraint firstItem="DNK-fq-2TA" firstAttribute="leading" secondItem="dCt-U9-hQC" secondAttribute="leading" constant="16" id="z6q-vA-Myk"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOu-qJ-2dO" userLabel="FooterView">
-                    <rect key="frame" x="0.0" y="224" width="414" height="100"/>
+                    <rect key="frame" x="0.0" y="194" width="414" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il6-Rd-Kbg">
                             <rect key="frame" x="10" y="10" width="40" height="21"/>

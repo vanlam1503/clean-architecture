@@ -20,5 +20,8 @@ extension App.String {
 
     struct UserDetail {
         static let profile = "Profile"
+        static let publicRepos = "PUBLIC REPO"
+        static let followers = "FOLLOWERS"
+        static let following = "FOLLOWING"
     }
 }

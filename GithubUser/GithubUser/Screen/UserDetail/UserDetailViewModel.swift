@@ -33,6 +33,9 @@ final class UserDetailViewModel: ViewModelType {
         var location: Driver<String>
         let bio: Driver<String>
         let error: Driver<NetworkError>
+        let publicRepos: Driver<Int>
+        let followers: Driver<Int>
+        let following: Driver<Int>
     }
 
     func transform(input: Input) -> Output {
@@ -43,6 +46,9 @@ final class UserDetailViewModel: ViewModelType {
         let userName = userDTO.map(\.userName)
         let location = userDTO.map(\.location)
         let bio = userDTO.map(\.bio)
+        let publicRepos = userDTO.map(\.publicRepos)
+        let followers = userDTO.map(\.followers)
+        let following = userDTO.map(\.following)
 
         let fetchUserDetail = input.trigger
             .asObservable()
@@ -62,7 +68,10 @@ final class UserDetailViewModel: ViewModelType {
             username: userName.asDriverOnEmpty(),
             location: location.asDriverOnEmpty(),
             bio: bio.asDriverOnEmpty(),
-            error: error.asDriverOnEmpty()
+            error: error.asDriverOnEmpty(),
+            publicRepos: publicRepos.asDriverOnEmpty(),
+            followers: followers.asDriverOnEmpty(),
+            following: following.asDriverOnEmpty()
         )
     }
 }
