@@ -26,10 +26,14 @@ protocol Cancellable {
     func cancel()
 }
 
-final class ApiClient {
+protocol ApiClientProtocol: ReactiveCompatible {
+    func makeCall(_ router: Router, completion: @escaping Completion<Data>) -> Request?
+}
 
-    let manager: Session
-    var request: Request?
+final class ApiClient: ApiClientProtocol {
+
+    private let manager: Session
+    private var request: Request?
 
     static let shared = ApiClient()
 
@@ -47,7 +51,7 @@ final class ApiClient {
 
     // MARK: - Old implementation
     @discardableResult
-    public func makeCall(
+    func makeCall(
         _ router: Router,
         completion: @escaping Completion<Data>) -> Request? {
             guard NetworkReachabilityManager()?.isReachable == true else {
@@ -93,8 +97,13 @@ extension ApiClient: Cancellable {
 // MARK: - ReactiveCompatible
 extension ApiClient: ReactiveCompatible {}
 
+// MAKR: - ApiClientService
+protocol ApiClientService {
+    func makeCall(_ router:  Router) -> Observable<Result<Data, NetworkError>>
+}
 // MARK: - Reactive
-extension Reactive where Base: ApiClient {
+
+extension Reactive: ApiClientService where Base: ApiClient {
 
     func makeCall(_ router:  Router) -> Observable<Result<Data, NetworkError>> {
         return Observable.create { observer in

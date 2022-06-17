@@ -21,12 +21,12 @@ struct DefaultsUseCaseProvider: UseCaseProvider {
     }
 
     func makeUserUseCase() -> UserUseCase {
-        let service = GithubService(apiClient)
+        let service = GithubService(apiClient.rx)
         return DefaultUsersUseCase(repository: service)
     }
 
     func makeUserDetailUseCase() -> UserDetailUseCase {
-        let service = GithubService(apiClient)
+        let service = GithubService(apiClient.rx)
         return DefaultUserDetailUseCase(repository: service)
     }
 }

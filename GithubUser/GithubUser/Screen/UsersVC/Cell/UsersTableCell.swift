@@ -35,7 +35,7 @@ final class UsersTableCell: UITableViewCell {
 
     func updateView(userDTO: UserDTO) {
         avatarImageView.setImage(userDTO.avatar)
-        userNameLabel.text = userDTO.userName
+        userNameLabel.text = userDTO.login
         profileLinkLabel.text = userDTO.githubProfile
     }
 }

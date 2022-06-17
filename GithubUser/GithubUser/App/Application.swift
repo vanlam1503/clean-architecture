@@ -9,7 +9,7 @@ import UIKit
 
 struct Application {
 
-    let userCaseProvider: UseCaseProvider
+    private let userCaseProvider: UseCaseProvider
 
     static let shared = Application()
 

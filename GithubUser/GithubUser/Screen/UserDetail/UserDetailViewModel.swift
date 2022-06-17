@@ -11,13 +11,11 @@ import RxCocoa
 
 final class UserDetailViewModel: ViewModelType {
 
-    private let navigator: UserDetailNavigator
     private let useCase: UserDetailUseCase
     private let userDTO: UserDTO
     private let bag = DisposeBag()
 
-    init(navigator: UserDetailNavigator, useCase: UserDetailUseCase, userDTO: UserDTO) {
-        self.navigator = navigator
+    init(useCase: UserDetailUseCase, userDTO: UserDTO) {
         self.useCase = useCase
         self.userDTO = userDTO
     }
@@ -43,7 +41,7 @@ final class UserDetailViewModel: ViewModelType {
 
         // Output
         let avatar = userDTO.map(\.avatar)
-        let userName = userDTO.map(\.userName)
+        let userName = userDTO.map(\.login)
         let location = userDTO.map(\.location)
         let bio = userDTO.map { userDTO -> String in
             if userDTO.bio.isEmpty {

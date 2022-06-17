@@ -22,9 +22,8 @@ struct DefaultUserNavigator: UserNavigator {
     }
 
     func moveToUserDetail(userDTO: UserDTO) {
-        let navigator = DefaultUserDetailNavigator(navi: navi)
-        let userCase = useCaseProvider.makeUserDetailUseCase()
-        let viewModel = UserDetailViewModel(navigator: navigator, useCase: userCase, userDTO: userDTO)
+        let userDetailUseCase = useCaseProvider.makeUserDetailUseCase()
+        let viewModel = UserDetailViewModel(useCase: userDetailUseCase, userDTO: userDTO)
         let vc = UserDetailViewController(viewModel: viewModel)
         navi?.pushViewController(vc, animated: true)
     }
