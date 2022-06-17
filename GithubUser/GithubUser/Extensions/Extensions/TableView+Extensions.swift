@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
     func register(forCell cell: UITableViewCell.Type) {
         let identifier = String(describing: cell)

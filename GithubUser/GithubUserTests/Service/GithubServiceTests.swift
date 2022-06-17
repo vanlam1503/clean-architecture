@@ -6,7 +6,10 @@
 //
 
 import XCTest
+import RxSwift
+import RxCocoa
 import RxBlocking
+import Extensions
 
 @testable import GithubUser
 

@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 
-extension ObservableType {
+public extension ObservableType {
 
     func onSuccess<Value, Error>() -> Observable<Value> where Element == Result<Value, Error> {
         return self.compactMap { result in
@@ -42,7 +42,7 @@ extension ObservableType {
         }
     }
 
-    func cache<Value: Codable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
+    func cache<Value: Encodable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
         return self.do(onNext: { result in
             switch result {
             case .success(let value):
@@ -52,7 +52,7 @@ extension ObservableType {
         })
     }
 
-    func getCache<Value: Decodable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
+    func getCache<Value: Codable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
         return self.map { result in
             switch result {
             case .success(let value):
@@ -68,7 +68,7 @@ extension ObservableType {
     }
 }
 
-extension SharedSequenceConvertibleType {
+public extension SharedSequenceConvertibleType {
 
     func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
         return map { _ in }

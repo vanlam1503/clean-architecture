@@ -1,6 +1,6 @@
 //
 //  Cache.swift
-//  GithubUser
+//  Extensions
 //
 //  Created by Lam Le on 17/06/2022.
 //
