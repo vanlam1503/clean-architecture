@@ -52,6 +52,7 @@
 		FEC5A9CE285C647200BFE925 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = FEC5A9CD285C647200BFE925 /* RxBlocking */; };
 		FEC5A9D0285C648B00BFE925 /* RxBlocking+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5A9CF285C648B00BFE925 /* RxBlocking+Extensions.swift */; };
 		FEC5A9D4285C694100BFE925 /* NetworkError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5A9D3285C694100BFE925 /* NetworkError+Extensions.swift */; };
+		FEC5AA63285C773E00BFE925 /* ResponseCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC5AA62285C773E00BFE925 /* ResponseCacheKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		FEC5A9CA285C634300BFE925 /* ExpectEqual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectEqual.swift; sourceTree = "<group>"; };
 		FEC5A9CF285C648B00BFE925 /* RxBlocking+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxBlocking+Extensions.swift"; sourceTree = "<group>"; };
 		FEC5A9D3285C694100BFE925 /* NetworkError+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkError+Extensions.swift"; sourceTree = "<group>"; };
+		FEC5AA62285C773E00BFE925 /* ResponseCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCacheKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				FE9CE3DB285A1E950014B2CF /* App.swift */,
 				FE9CE3DD285A1EA10014B2CF /* AppString.swift */,
 				FE9CE3F6285A350A0014B2CF /* Application.swift */,
+				FEC5AA62285C773E00BFE925 /* ResponseCacheKey.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				FE9CE3E4285A201A0014B2CF /* UsersViewModel.swift in Sources */,
 				FE9CE408285AC34E0014B2CF /* UIImageView+Extensions.swift in Sources */,
 				FE9CE3E2285A1F380014B2CF /* DefaultUsersUseCase.swift in Sources */,
+				FEC5AA63285C773E00BFE925 /* ResponseCacheKey.swift in Sources */,
 				FE9CE3F1285A25910014B2CF /* GithubService.swift in Sources */,
 				FEA782AA285B1CDD000A7063 /* UserDetailUseCase.swift in Sources */,
 				FE9CE3D9285A1AC50014B2CF /* Api.swift in Sources */,
