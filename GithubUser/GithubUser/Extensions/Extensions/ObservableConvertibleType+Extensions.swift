@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-extension ObservableConvertibleType {
+public extension ObservableConvertibleType {
 
     func asDriverOnEmpty() -> Driver<Element> {
         return asDriver(onErrorDriveWith: .empty())

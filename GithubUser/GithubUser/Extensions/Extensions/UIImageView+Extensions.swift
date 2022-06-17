@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-extension UIImageView {
+public extension UIImageView {
 
     func setImage(_ urlString: String?) {
         guard let urlString = urlString, !urlString.isEmpty else {

@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import Foundation
+import Extensions
 
 protocol GithubServiceRepository {
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>
@@ -27,8 +28,8 @@ struct GithubService: GithubServiceRepository {
         return apiClient
             .makeCall(router)
             .mapObject(to: [UserDTO].self)
-//            .cache(key: router.urlString)
-//            .getCache(key: router.urlString)
+            .cache(key: router.urlString)
+            .getCache(key: router.urlString)
     }
 
     func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>> {
@@ -36,7 +37,7 @@ struct GithubService: GithubServiceRepository {
         return apiClient
             .makeCall(router)
             .mapObject(to: UserDTO.self)
-//            .cache(key: router.urlString)
-//            .getCache(key: router.urlString)
+            .cache(key: router.urlString)
+            .getCache(key: router.urlString)
     }
 }
