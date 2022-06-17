@@ -24,8 +24,11 @@ protocol Router: URLRequestConvertible, URLConvertible {
 
 extension Router {
 
+    var urlString: String {
+        return Api.baseURL + path
+    }
+
     func asURL() throws -> URL {
-        let urlString = Api.baseURL + path
         guard let url = URL(string: urlString) else {
             throw NetworkError.invalidUrl
         }

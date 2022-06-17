@@ -24,27 +24,19 @@ struct GithubService: GithubServiceRepository {
 
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>> {
         let router = GithubRouter.users
-        return apiClient.rx.makeCall(router).map { result in
-            switch result {
-            case .success(let data):
-                let userDTOs = try! JSONDecoder().decode([UserDTO].self, from: data)
-                return .success(userDTOs)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
+        return apiClient.rx
+            .makeCall(router)
+            .mapObject(to: [UserDTO].self)
+            .cache(key: router.urlString)
+            .getCache(key: router.urlString)
     }
 
     func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>> {
         let router = GithubRouter.user(login: login)
-        return apiClient.rx.makeCall(router).map { result in
-            switch result {
-            case .success(let data):
-                let userDTO = try! JSONDecoder().decode(UserDTO.self, from: data)
-                return .success(userDTO)
-            case .failure(let error):
-                return .failure(error)
-            }
-        }
+        return apiClient.rx
+            .makeCall(router)
+            .mapObject(to: UserDTO.self)
+            .cache(key: router.urlString)
+            .getCache(key: router.urlString)
     }
 }

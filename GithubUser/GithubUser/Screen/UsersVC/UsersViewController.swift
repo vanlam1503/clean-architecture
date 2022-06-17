@@ -74,6 +74,12 @@ final class UsersViewController: UIViewController {
             .itemSelected
             .drive()
             .disposed(by: bag)
+
+        output.error
+            .drive(onNext: { [weak self] networkError in
+                self?.showAlert(message: networkError.localizedDescription)
+            })
+            .disposed(by: bag)
     }
 
     private func notify() {

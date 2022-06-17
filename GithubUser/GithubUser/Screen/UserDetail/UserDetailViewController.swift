@@ -104,7 +104,9 @@ final class UserDetailViewController: UIViewController {
             .disposed(by: bag)
 
         output.error
-            .drive()
+            .drive(onNext: { [weak self] networkError in
+                self?.showAlert(message: networkError.localizedDescription)
+            })
             .disposed(by: bag)
 
         output.publicRepos

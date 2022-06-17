@@ -45,6 +45,8 @@
 		FEA782B0285B2AD8000A7063 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782AF285B2AD8000A7063 /* UIView+Extensions.swift */; };
 		FEA782B3285B41A6000A7063 /* UserDetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */; };
 		FEA782B5285B41B3000A7063 /* UserDetailStatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */; };
+		FEA782B7285C20B4000A7063 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B6285C20B4000A7063 /* Cache.swift */; };
+		FEA782B9285C2C0C000A7063 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B8285C2C0C000A7063 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		FEA782AF285B2AD8000A7063 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailStatisticsView.swift; sourceTree = "<group>"; };
 		FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailStatisticsView.xib; sourceTree = "<group>"; };
+		FEA782B6285C20B4000A7063 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		FEA782B8285C2C0C000A7063 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9CE3E9285A22240014B2CF /* UserDTO.swift */,
+				FEA782B6285C20B4000A7063 /* Cache.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				FE9CE402285AAEBF0014B2CF /* TableView+Extensions.swift */,
 				FE9CE407285AC34E0014B2CF /* UIImageView+Extensions.swift */,
 				FEA782AF285B2AD8000A7063 /* UIView+Extensions.swift */,
+				FEA782B8285C2C0C000A7063 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,12 +376,14 @@
 				FE9CE3EF285A24970014B2CF /* ObservableConvertibleType+Extensions.swift in Sources */,
 				FE9CE3F5285A33080014B2CF /* ObservableType+Extensions.swift in Sources */,
 				FE9CE3C0285A0AAC0014B2CF /* ApiClient.swift in Sources */,
+				FEA782B9285C2C0C000A7063 /* UIViewController+Extensions.swift in Sources */,
 				FE9CE3E7285A20400014B2CF /* ViewModelType.swift in Sources */,
 				FE9CE3DC285A1E950014B2CF /* App.swift in Sources */,
 				FE9CE3DE285A1EA10014B2CF /* AppString.swift in Sources */,
 				FE9CE400285AAB880014B2CF /* UsersTableCell.swift in Sources */,
 				FE9CE3CE285A13AF0014B2CF /* GithubRouter.swift in Sources */,
 				FE9CE3ED285A23440014B2CF /* KeyedDecodingContainer+Extensions.swift in Sources */,
+				FEA782B7285C20B4000A7063 /* Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

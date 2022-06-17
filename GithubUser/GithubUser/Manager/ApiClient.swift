@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
-enum NetworkError: Error {
+enum NetworkError: Swift.Error {
     case invalidUrl
     case disconnect
     case timeout
@@ -50,9 +50,14 @@ final class ApiClient {
     public func makeCall(
         _ router: Router,
         completion: @escaping Completion<Data>) -> Request? {
+            guard NetworkReachabilityManager()?.isReachable == true else {
+                completion(.failure(.disconnect))
+                return nil
+            }
             self.request = manager.request(router).response { response in
                 guard NetworkReachabilityManager()?.isReachable == true else {
-                    return completion(.failure(.disconnect))
+                    completion(.failure(.disconnect))
+                    return
                 }
                 let statusCode = response.response?.statusCode
                 if statusCode == NSURLErrorTimedOut {
