@@ -22,6 +22,10 @@ struct DefaultUserDetailUseCase: UserDetailUseCase {
     }
 
     func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>> {
-        repository.fetchUserDetail(login: login)
+        let key = App.ResponseCacheKey.user(login: login)
+        return repository
+            .fetchUserDetail(login: login)
+            .cache(key: key)
+            .getCache(key: key)
     }
 }
