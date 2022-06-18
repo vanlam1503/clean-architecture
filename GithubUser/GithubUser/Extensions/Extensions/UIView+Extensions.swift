@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
 
     class func load<T: UIView>(from name: T.Type) -> T {
         guard let view = UINib(nibName: String(describing: name), bundle: nil).instantiate(withOwner: nil, options: nil).first as? T else {
@@ -18,25 +18,25 @@ extension UIView {
 }
 
 // Anchor
-extension UIView {
+public extension UIView {
 
     struct AnchorOptions: OptionSet {
 
-        let rawValue: Int
+        public let rawValue: Int
 
-        init(rawValue: Int) {
+        public init(rawValue: Int) {
             self.rawValue = rawValue
         }
 
-        static let top = UIView.AnchorOptions(rawValue: 1 << 0)
+        public static let top = UIView.AnchorOptions(rawValue: 1 << 0)
 
-        static let leading = UIView.AnchorOptions(rawValue: 1 << 1)
+        public static let leading = UIView.AnchorOptions(rawValue: 1 << 1)
 
-        static let trailing = UIView.AnchorOptions(rawValue: 1 << 2)
+        public static let trailing = UIView.AnchorOptions(rawValue: 1 << 2)
 
-        static let bottom = UIView.AnchorOptions(rawValue: 1 << 3)
+        public static let bottom = UIView.AnchorOptions(rawValue: 1 << 3)
 
-        static let all: UIView.AnchorOptions = [.top, .leading, .trailing, .bottom]
+        public static let all: UIView.AnchorOptions = [.top, .leading, .trailing, .bottom]
     }
 
     func anchor(toView view: UIView?, insets: UIEdgeInsets = .zero, anchorOptions options: AnchorOptions = .all) {

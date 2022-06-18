@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Alamofire
 
-extension ObservableType {
+public extension ObservableType {
 
     func onSuccess<Value, Error>() -> Observable<Value> where Element == Result<Value, Error> {
         return self.compactMap { result in
@@ -68,7 +68,7 @@ extension ObservableType {
     }
 }
 
-extension SharedSequenceConvertibleType {
+public extension SharedSequenceConvertibleType {
 
     func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
         return map { _ in }
