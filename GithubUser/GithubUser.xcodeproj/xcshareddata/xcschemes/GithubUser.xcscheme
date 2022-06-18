@@ -38,6 +38,16 @@
                ReferencedContainer = "container:GithubUser.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FEBADE70285DB77800022DA2"
+               BuildableName = "GithubUser1Tests.xctest"
+               BlueprintName = "GithubUserTests"
+               ReferencedContainer = "container:GithubUser.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
