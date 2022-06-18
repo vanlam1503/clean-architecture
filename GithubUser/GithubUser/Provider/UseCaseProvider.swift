@@ -14,19 +14,21 @@ protocol UseCaseProvider {
 
 struct DefaultsUseCaseProvider: UseCaseProvider {
 
-    let apiClient: ApiClient
+    private let apiClient: ApiClient
+    private let cache: ResponseCache.Type
 
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient, cache: ResponseCache.Type) {
         self.apiClient = apiClient
+        self.cache = cache
     }
 
     func makeUserUseCase() -> UserUseCase {
         let service = GithubService(apiClient.rx)
-        return DefaultUsersUseCase(repository: service)
+        return DefaultUsersUseCase(repository: service, cache: cache)
     }
 
     func makeUserDetailUseCase() -> UserDetailUseCase {
         let service = GithubService(apiClient.rx)
-        return DefaultUserDetailUseCase(repository: service)
+        return DefaultUserDetailUseCase(repository: service, cache: cache)
     }
 }

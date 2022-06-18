@@ -15,18 +15,20 @@ protocol UserUseCase {
 
 struct DefaultUsersUseCase: UserUseCase {
 
-    let repository: GithubServiceRepository
+    private let repository: GithubServiceRepository
+    private let cache: ResponseCache.Type
 
-    init(repository: GithubServiceRepository) {
+    init(repository: GithubServiceRepository, cache: ResponseCache.Type) {
         self.repository = repository
+        self.cache = cache
     }
 
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>> {
         let key = App.ResponseCacheKey.users
         return repository
             .fetchUsers()
-            .cache(key: key)
-            .getCache(key: key)
+            .cache(key: key, storeAt: cache)
+            .getCache(key: key, storedAt: cache)
 
     }
 }

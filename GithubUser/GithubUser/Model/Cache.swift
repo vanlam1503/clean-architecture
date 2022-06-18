@@ -5,9 +5,14 @@
 //  Created by Lam Le on 17/06/2022.
 //
 
-import Foundation
+import UIKit
 
-struct Cache {
+protocol ResponseCache {
+    static func store<T>(key: String, value: T) where T: Encodable
+    static func get<U>(key: String) -> U? where U: Decodable
+}
+
+struct Cache: ResponseCache {
 
     static func store<Value>(key: String, value: Value) where Value: Encodable {
         if let data = try? JSONEncoder().encode(value) {

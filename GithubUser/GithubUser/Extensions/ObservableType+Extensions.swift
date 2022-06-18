@@ -42,23 +42,23 @@ extension ObservableType {
         }
     }
 
-    func cache<Value: Codable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
+    func cache<Value: Codable, Error>(key: String, storeAt cache: ResponseCache.Type) -> Observable<Element> where Element == Result<Value, Error> {
         return self.do(onNext: { result in
             switch result {
             case .success(let value):
-                Cache.store(key: key, value: value)
+                cache.store(key: key, value: value)
             case .failure: break
             }
         })
     }
 
-    func getCache<Value: Decodable, Error>(key: String) -> Observable<Element> where Element == Result<Value, Error> {
+    func getCache<Value: Decodable, Error>(key: String, storedAt cache: ResponseCache.Type) -> Observable<Element> where Element == Result<Value, Error> {
         return self.map { result in
             switch result {
             case .success(let value):
                 return .success(value)
             case .failure(let error):
-                if let value: Value = Cache.get(key: key) {
+                if let value: Value = cache.get(key: key) {
                     return .success(value)
                 } else {
                     return .failure(error)

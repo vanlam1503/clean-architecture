@@ -14,7 +14,9 @@ struct Application {
     static let shared = Application()
 
     init() {
-        userCaseProvider = DefaultsUseCaseProvider(apiClient: .shared)
+        userCaseProvider = DefaultsUseCaseProvider(
+            apiClient: .shared,
+            cache: Cache.self)
     }
 
     func configure(in window: UIWindow?) {
