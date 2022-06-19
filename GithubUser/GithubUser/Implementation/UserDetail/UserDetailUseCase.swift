@@ -8,12 +8,10 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import UserDetail
+import Extensions
 
-protocol UserDetailUseCase {
-    func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>>
-}
-
-struct DefaultUserDetailUseCase: UserDetailUseCase {
+struct DefaultUserDetailUseCase: UserDetail.UserDetailUseCase {
 
     private let repository: GithubServiceRepository
     private let cache: ResponseCache.Type
@@ -23,7 +21,7 @@ struct DefaultUserDetailUseCase: UserDetailUseCase {
         self.cache = cache
     }
 
-    func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>> {
+    func fetchUserDetail(login: String) -> Observable<Result<User, Error>> {
         let key = App.ResponseCacheKey.user(login: login)
         return repository
             .fetchUserDetail(login: login)

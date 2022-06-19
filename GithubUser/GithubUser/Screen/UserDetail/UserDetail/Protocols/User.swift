@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Extensions
 
-public protocol User {
+public protocol User: Mapper {
     var login: String { get set }
     var githubProfile: String { get set }
     var avatar: String { get set }
@@ -17,5 +18,4 @@ public protocol User {
     var followers: Int { get set }
     var following: Int { get set }
     var name: String { get set }
-
 }

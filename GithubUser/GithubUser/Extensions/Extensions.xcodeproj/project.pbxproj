@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE6C2FB2285EBD4F0006DA17 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6C2FB1285EBD4F0006DA17 /* Mapper.swift */; };
 		FEBADF3C285E2E7700022DA2 /* Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBADF3B285E2E7700022DA2 /* Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEBADF4F285E2EA400022DA2 /* KeyedDecodingContainer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADF48285E2EA400022DA2 /* KeyedDecodingContainer+Extensions.swift */; };
 		FEBADF50285E2EA400022DA2 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADF49285E2EA400022DA2 /* ObservableType+Extensions.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE6C2FB1285EBD4F0006DA17 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		FEBADF38285E2E7700022DA2 /* Extensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBADF3B285E2E7700022DA2 /* Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extensions.h; sourceTree = "<group>"; };
 		FEBADF48285E2EA400022DA2 /* KeyedDecodingContainer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Extensions.swift"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				FEBADF72285E310900022DA2 /* ResponseCache.swift */,
+				FE6C2FB1285EBD4F0006DA17 /* Mapper.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				FEBADF50285E2EA400022DA2 /* ObservableType+Extensions.swift in Sources */,
 				FEBADF73285E310900022DA2 /* ResponseCache.swift in Sources */,
+				FE6C2FB2285EBD4F0006DA17 /* Mapper.swift in Sources */,
 				FEBADF51285E2EA400022DA2 /* TableView+Extensions.swift in Sources */,
 				FEBADF54285E2EA400022DA2 /* ObservableConvertibleType+Extensions.swift in Sources */,
 				FEBADF55285E2EA400022DA2 /* UIViewController+Extensions.swift in Sources */,

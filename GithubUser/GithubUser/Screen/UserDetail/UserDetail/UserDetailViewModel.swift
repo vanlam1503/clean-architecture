@@ -11,22 +11,22 @@ import RxCocoa
 import ViewModelType
 import Extensions
 
-final class UserDetailViewModel: ViewModelType {
+public class UserDetailViewModel: ViewModelType {
 
     private let useCase: UserDetailUseCase
-    private let userDTO: User
+    private let user: User
     private let bag = DisposeBag()
 
-    init(useCase: UserDetailUseCase, userDTO: User) {
+    public init(useCase: UserDetailUseCase, userDTO: User) {
         self.useCase = useCase
-        self.userDTO = userDTO
+        self.user = userDTO
     }
 
-    struct Input {
+    public struct Input {
         let trigger: Driver<Void>
     }
 
-    struct Output {
+    public struct Output {
         let userDTO: Driver<User>
         let avatar: Driver<String>
         let username: Driver<String>
@@ -38,8 +38,8 @@ final class UserDetailViewModel: ViewModelType {
         let following: Driver<Int>
     }
 
-    func transform(input: Input) -> Output {
-        let userDTO: BehaviorRelay<User> = .init(value: self.userDTO)
+    public func transform(input: Input) -> Output {
+        let userDTO: BehaviorRelay<User> = .init(value: self.user)
 
         // Output
         let avatar = userDTO.map(\.avatar)

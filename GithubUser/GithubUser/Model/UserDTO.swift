@@ -7,11 +7,20 @@
 
 import Foundation
 import Extensions
+import UserDetail
 
 /// Requirement:
 /// Display username, github profile’s link and avatar
-struct UserDTO: Codable {
+struct UserDTO: Codable, UserDetail.User {
 
+    static func dataToObject(_ data: Data) throws -> UserDTO {
+        return try JSONDecoder().decode(UserDTO.self, from: data)
+    }
+    
+    func objectToData() throws -> Data {
+        return try JSONEncoder().encode(self)
+    }
+    
     var login: String = ""
     var githubProfile: String = ""
     var avatar: String = ""

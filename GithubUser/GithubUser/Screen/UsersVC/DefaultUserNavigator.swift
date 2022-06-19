@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserDetail
 
 protocol UserNavigator {
     func moveToUserDetail(userDTO: UserDTO)

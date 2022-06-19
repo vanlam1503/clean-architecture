@@ -11,7 +11,7 @@ import RxCocoa
 import Extensions
 import App
 
-final class UserDetailViewController: UIViewController {
+public class UserDetailViewController: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -27,7 +27,7 @@ final class UserDetailViewController: UIViewController {
     private let viewModel: UserDetailViewModel
     private let bag = DisposeBag()
 
-    init(viewModel: UserDetailViewModel) {
+    public init(viewModel: UserDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "UserDetailViewController", bundle: nil)
     }
@@ -36,7 +36,7 @@ final class UserDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configView()
         bindingView()

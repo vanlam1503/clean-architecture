@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import Foundation
+import Extensions
 
 protocol GithubServiceRepository {
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>
@@ -35,4 +36,8 @@ struct GithubService: GithubServiceRepository {
             .makeCall(router)
             .mapObject(to: UserDTO.self)
     }
+}
+
+extension Collection where Self: Mapper {
+    
 }

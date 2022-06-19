@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol ResponseCache {
-    static func store<T>(key: String, value: T) where T: Encodable
-    static func get<U>(key: String) -> U? where U: Decodable
+    static func store<T>(key: String, value: T) where T: Mapper
+    static func get<U>(key: String) -> U? where U: Mapper
 }

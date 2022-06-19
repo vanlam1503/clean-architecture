@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE6C2FAC285EB7190006DA17 /* ViewModelType.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF97285E334D00022DA2 /* ViewModelType.framework */; };
+		FE6C2FAD285EB7190006DA17 /* ViewModelType.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF97285E334D00022DA2 /* ViewModelType.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FE6C2FAF285EB7B60006DA17 /* UserDetail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF1B285E2CD500022DA2 /* UserDetail.framework */; };
+		FE6C2FB0285EB7B60006DA17 /* UserDetail.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF1B285E2CD500022DA2 /* UserDetail.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FE9CE3A5285A09800014B2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CE3A4285A09800014B2CF /* AppDelegate.swift */; };
 		FE9CE3AE285A09830014B2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9CE3AD285A09830014B2CF /* Assets.xcassets */; };
 		FE9CE3B1285A09830014B2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9CE3AF285A09830014B2CF /* LaunchScreen.storyboard */; };
@@ -31,12 +35,7 @@
 		FE9CE400285AAB880014B2CF /* UsersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9CE3FE285AAB880014B2CF /* UsersTableCell.swift */; };
 		FE9CE401285AAB880014B2CF /* UsersTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9CE3FF285AAB880014B2CF /* UsersTableCell.xib */; };
 		FE9CE406285AC30C0014B2CF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FE9CE405285AC30C0014B2CF /* SDWebImage */; };
-		FEA782A7285B1C58000A7063 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782A5285B1C58000A7063 /* UserDetailViewController.swift */; };
-		FEA782A8285B1C58000A7063 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA782A6285B1C58000A7063 /* UserDetailViewController.xib */; };
 		FEA782AA285B1CDD000A7063 /* UserDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782A9285B1CDD000A7063 /* UserDetailUseCase.swift */; };
-		FEA782AE285B1CFD000A7063 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */; };
-		FEA782B3285B41A6000A7063 /* UserDetailStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */; };
-		FEA782B5285B41B3000A7063 /* UserDetailStatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */; };
 		FEA782B7285C20B4000A7063 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA782B6285C20B4000A7063 /* Cache.swift */; };
 		FEBADE81285DB7E500022DA2 /* GithubServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADE7B285DB7E400022DA2 /* GithubServiceTests.swift */; };
 		FEBADE82285DB7E500022DA2 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADE7C285DB7E400022DA2 /* MockApiClient.swift */; };
@@ -95,6 +94,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FEBADF70285E308600022DA2 /* Extensions.framework in Embed Frameworks */,
+				FE6C2FAD285EB7190006DA17 /* ViewModelType.framework in Embed Frameworks */,
+				FE6C2FB0285EB7B60006DA17 /* UserDetail.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,12 +125,7 @@
 		FE9CE3F9285A3DF60014B2CF /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		FE9CE3FE285AAB880014B2CF /* UsersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableCell.swift; sourceTree = "<group>"; };
 		FE9CE3FF285AAB880014B2CF /* UsersTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersTableCell.xib; sourceTree = "<group>"; };
-		FEA782A5285B1C58000A7063 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
-		FEA782A6285B1C58000A7063 /* UserDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		FEA782A9285B1CDD000A7063 /* UserDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailUseCase.swift; sourceTree = "<group>"; };
-		FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
-		FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailStatisticsView.swift; sourceTree = "<group>"; };
-		FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailStatisticsView.xib; sourceTree = "<group>"; };
 		FEA782B6285C20B4000A7063 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		FEBADE71285DB77800022DA2 /* GithubUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBADE7B285DB7E400022DA2 /* GithubServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubServiceTests.swift; sourceTree = "<group>"; };
@@ -151,8 +147,10 @@
 			files = (
 				FE9CE3D6285A165C0014B2CF /* RxSwift in Frameworks */,
 				FE9CE3D4285A165C0014B2CF /* RxCocoa in Frameworks */,
+				FE6C2FAF285EB7B60006DA17 /* UserDetail.framework in Frameworks */,
 				FEBADF6F285E308600022DA2 /* Extensions.framework in Frameworks */,
 				FE9CE406285AC30C0014B2CF /* SDWebImage in Frameworks */,
+				FE6C2FAC285EB7190006DA17 /* ViewModelType.framework in Frameworks */,
 				FE9CE3D1285A164A0014B2CF /* Alamofire in Frameworks */,
 				FEC5A9CE285C647200BFE925 /* RxBlocking in Frameworks */,
 			);
@@ -168,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE6C2FAE285EB7730006DA17 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				FEA782A4285B1821000A7063 /* UserDetail */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
 		FE9CE398285A09800014B2CF = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +196,7 @@
 		FE9CE3A3285A09800014B2CF /* GithubUser */ = {
 			isa = PBXGroup;
 			children = (
+				FE6C2FAE285EB7730006DA17 /* Implementation */,
 				FEBADFB1285E349200022DA2 /* App.xcodeproj */,
 				FEBADF92285E334D00022DA2 /* ViewModelType.xcodeproj */,
 				FEBADF68285E303A00022DA2 /* Extensions.xcodeproj */,
@@ -201,7 +208,6 @@
 				FE9CE3E8285A22180014B2CF /* Model */,
 				FE9CE3BC285A09B70014B2CF /* Screen */,
 				FE9CE3BE285A0AA10014B2CF /* Service */,
-				FE9CE3E5285A20340014B2CF /* ViewModelType */,
 				FE9CE3AD285A09830014B2CF /* Assets.xcassets */,
 				FE9CE3B2285A09830014B2CF /* Info.plist */,
 				FE9CE3AF285A09830014B2CF /* LaunchScreen.storyboard */,
@@ -213,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				FEBADF16285E2CD400022DA2 /* UserDetail.xcodeproj */,
-				FEA782A4285B1821000A7063 /* UserDetail1 */,
 				FE9CE3BD285A09BE0014B2CF /* UsersVC */,
 			);
 			path = Screen;
@@ -269,13 +274,6 @@
 			path = App1;
 			sourceTree = "<group>";
 		};
-		FE9CE3E5285A20340014B2CF /* ViewModelType */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModelType;
-			sourceTree = "<group>";
-		};
 		FE9CE3E8285A22180014B2CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,25 +300,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		FEA782A4285B1821000A7063 /* UserDetail1 */ = {
+		FEA782A4285B1821000A7063 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
-				FEA782B1285B415B000A7063 /* UserDetailStatisticsView */,
 				FEA782A9285B1CDD000A7063 /* UserDetailUseCase.swift */,
-				FEA782A5285B1C58000A7063 /* UserDetailViewController.swift */,
-				FEA782A6285B1C58000A7063 /* UserDetailViewController.xib */,
-				FEA782AD285B1CFD000A7063 /* UserDetailViewModel.swift */,
 			);
-			path = UserDetail1;
-			sourceTree = "<group>";
-		};
-		FEA782B1285B415B000A7063 /* UserDetailStatisticsView */ = {
-			isa = PBXGroup;
-			children = (
-				FEA782B2285B41A6000A7063 /* UserDetailStatisticsView.swift */,
-				FEA782B4285B41B3000A7063 /* UserDetailStatisticsView.xib */,
-			);
-			path = UserDetailStatisticsView;
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		FEBADE72285DB77800022DA2 /* GithubUserTests */ = {
@@ -535,8 +520,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9CE3B1285A09830014B2CF /* LaunchScreen.storyboard in Resources */,
-				FEA782B5285B41B3000A7063 /* UserDetailStatisticsView.xib in Resources */,
-				FEA782A8285B1C58000A7063 /* UserDetailViewController.xib in Resources */,
 				FE9CE401285AAB880014B2CF /* UsersTableCell.xib in Resources */,
 				FE9CE3BB285A09B10014B2CF /* UsersViewController.xib in Resources */,
 				FE9CE3AE285A09830014B2CF /* Assets.xcassets in Resources */,
@@ -566,12 +549,9 @@
 				FE9CE3D9285A1AC50014B2CF /* Api.swift in Sources */,
 				FE9CE3E0285A1F280014B2CF /* DefaultUserNavigator.swift in Sources */,
 				FE9CE3FA285A3DF60014B2CF /* UseCaseProvider.swift in Sources */,
-				FEA782A7285B1C58000A7063 /* UserDetailViewController.swift in Sources */,
 				FE9CE3CB285A11060014B2CF /* Router.swift in Sources */,
 				FE9CE3EA285A22240014B2CF /* UserDTO.swift in Sources */,
-				FEA782AE285B1CFD000A7063 /* UserDetailViewModel.swift in Sources */,
 				FE9CE3A5285A09800014B2CF /* AppDelegate.swift in Sources */,
-				FEA782B3285B41A6000A7063 /* UserDetailStatisticsView.swift in Sources */,
 				FE9CE3BA285A09B10014B2CF /* UsersViewController.swift in Sources */,
 				FE9CE3C0285A0AAC0014B2CF /* ApiClient.swift in Sources */,
 				FE9CE3DC285A1E950014B2CF /* App.swift in Sources */,
