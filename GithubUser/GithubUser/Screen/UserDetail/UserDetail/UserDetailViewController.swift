@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Extensions
+import App
 
 final class UserDetailViewController: UIViewController {
 

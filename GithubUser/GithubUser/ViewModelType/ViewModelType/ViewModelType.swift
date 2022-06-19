@@ -1,13 +1,13 @@
 //
 //  ViewModelType.swift
-//  GithubUser
+//  ViewModelType
 //
-//  Created by Lam Le on 15/06/2022.
+//  Created by Lam Le V. on 6/18/22.
 //
 
 import Foundation
 
-protocol ViewModelType {
+public protocol ViewModelType {
     associatedtype Input
     associatedtype Output
     func transform(input: Input) -> Output

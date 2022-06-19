@@ -8,14 +8,16 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import ViewModelType
+import Extensions
 
 final class UserDetailViewModel: ViewModelType {
 
     private let useCase: UserDetailUseCase
-    private let userDTO: UserDTO
+    private let userDTO: User
     private let bag = DisposeBag()
 
-    init(useCase: UserDetailUseCase, userDTO: UserDTO) {
+    init(useCase: UserDetailUseCase, userDTO: User) {
         self.useCase = useCase
         self.userDTO = userDTO
     }
@@ -25,19 +27,19 @@ final class UserDetailViewModel: ViewModelType {
     }
 
     struct Output {
-        let userDTO: Driver<UserDTO>
+        let userDTO: Driver<User>
         let avatar: Driver<String>
         let username: Driver<String>
         var location: Driver<String>
         let bio: Driver<String>
-        let error: Driver<NetworkError>
+        let error: Driver<Error>
         let publicRepos: Driver<Int>
         let followers: Driver<Int>
         let following: Driver<Int>
     }
 
     func transform(input: Input) -> Output {
-        let userDTO: BehaviorRelay<UserDTO> = .init(value: self.userDTO)
+        let userDTO: BehaviorRelay<User> = .init(value: self.userDTO)
 
         // Output
         let avatar = userDTO.map(\.avatar)

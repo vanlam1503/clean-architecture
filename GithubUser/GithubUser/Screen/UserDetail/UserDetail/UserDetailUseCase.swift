@@ -8,7 +8,8 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Alamofire
 
 public protocol UserDetailUseCase {
-    func fetchUserDetail(login: String) -> Observable<Result<User, NetworkError>>
+    func fetchUserDetail(login: String) -> Observable<Result<User, Error>>
 }

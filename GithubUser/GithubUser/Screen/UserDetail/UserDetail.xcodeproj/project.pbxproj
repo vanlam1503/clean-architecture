@@ -15,8 +15,32 @@
 		FEBADF27285E2D1900022DA2 /* UserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEBADF21285E2D1900022DA2 /* UserDetailViewController.xib */; };
 		FEBADF28285E2D1900022DA2 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADF22285E2D1900022DA2 /* UserDetailViewModel.swift */; };
 		FEBADF2B285E2D5100022DA2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADF2A285E2D5100022DA2 /* User.swift */; };
-		FEBADF2D285E2D8B00022DA2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADF2C285E2D8B00022DA2 /* NetworkError.swift */; };
+		FEBADF76285E32B400022DA2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FEBADF75285E32B400022DA2 /* RxCocoa */; };
+		FEBADF78285E32B400022DA2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FEBADF77285E32B400022DA2 /* RxSwift */; };
+		FEBADF7B285E32CF00022DA2 /* Extensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF7A285E32CF00022DA2 /* Extensions.framework */; };
+		FEBADF7C285E32CF00022DA2 /* Extensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF7A285E32CF00022DA2 /* Extensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEBADF9B285E339E00022DA2 /* ViewModelType.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF9A285E339E00022DA2 /* ViewModelType.framework */; };
+		FEBADF9C285E339E00022DA2 /* ViewModelType.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADF9A285E339E00022DA2 /* ViewModelType.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FEBADFBD285E350000022DA2 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADFBC285E350000022DA2 /* AppString.swift */; };
+		FEBADFBF285E350A00022DA2 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADFBE285E350A00022DA2 /* App.framework */; };
+		FEBADFC0285E350A00022DA2 /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FEBADFBE285E350A00022DA2 /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FEBADF7D285E32CF00022DA2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FEBADF7C285E32CF00022DA2 /* Extensions.framework in Embed Frameworks */,
+				FEBADFC0285E350A00022DA2 /* App.framework in Embed Frameworks */,
+				FEBADF9C285E339E00022DA2 /* ViewModelType.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FEBADF0C285E2CC500022DA2 /* UserDetail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserDetail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,7 +52,10 @@
 		FEBADF21285E2D1900022DA2 /* UserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailViewController.xib; sourceTree = "<group>"; };
 		FEBADF22285E2D1900022DA2 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		FEBADF2A285E2D5100022DA2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		FEBADF2C285E2D8B00022DA2 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FEBADF7A285E32CF00022DA2 /* Extensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Extensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBADF9A285E339E00022DA2 /* ViewModelType.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ViewModelType.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEBADFBC285E350000022DA2 /* AppString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppString.swift; sourceTree = "<group>"; };
+		FEBADFBE285E350A00022DA2 /* App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +63,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBADF78285E32B400022DA2 /* RxSwift in Frameworks */,
+				FEBADF9B285E339E00022DA2 /* ViewModelType.framework in Frameworks */,
+				FEBADF76285E32B400022DA2 /* RxCocoa in Frameworks */,
+				FEBADF7B285E32CF00022DA2 /* Extensions.framework in Frameworks */,
+				FEBADFBF285E350A00022DA2 /* App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +79,7 @@
 			children = (
 				FEBADF0E285E2CC500022DA2 /* UserDetail */,
 				FEBADF0D285E2CC500022DA2 /* Products */,
+				FEBADF79285E32CF00022DA2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +94,7 @@
 		FEBADF0E285E2CC500022DA2 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FEBADFBB285E34F600022DA2 /* AppString */,
 				FEBADF29285E2D4300022DA2 /* Protocols */,
 				FEBADF1C285E2D1900022DA2 /* UserDetailStatisticsView */,
 				FEBADF1F285E2D1900022DA2 /* UserDetailUseCase.swift */,
@@ -85,9 +119,26 @@
 			isa = PBXGroup;
 			children = (
 				FEBADF2A285E2D5100022DA2 /* User.swift */,
-				FEBADF2C285E2D8B00022DA2 /* NetworkError.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FEBADF79285E32CF00022DA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEBADFBE285E350A00022DA2 /* App.framework */,
+				FEBADF9A285E339E00022DA2 /* ViewModelType.framework */,
+				FEBADF7A285E32CF00022DA2 /* Extensions.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEBADFBB285E34F600022DA2 /* AppString */ = {
+			isa = PBXGroup;
+			children = (
+				FEBADFBC285E350000022DA2 /* AppString.swift */,
+			);
+			path = AppString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,12 +163,17 @@
 				FEBADF08285E2CC500022DA2 /* Sources */,
 				FEBADF09285E2CC500022DA2 /* Frameworks */,
 				FEBADF0A285E2CC500022DA2 /* Resources */,
+				FEBADF7D285E32CF00022DA2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = UserDetail;
+			packageProductDependencies = (
+				FEBADF75285E32B400022DA2 /* RxCocoa */,
+				FEBADF77285E32B400022DA2 /* RxSwift */,
+			);
 			productName = UserDetail;
 			productReference = FEBADF0C285E2CC500022DA2 /* UserDetail.framework */;
 			productType = "com.apple.product-type.framework";
@@ -146,6 +202,9 @@
 				Base,
 			);
 			mainGroup = FEBADF02285E2CC500022DA2;
+			packageReferences = (
+				FEBADF74285E32B400022DA2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = FEBADF0D285E2CC500022DA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -172,10 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBADFBD285E350000022DA2 /* AppString.swift in Sources */,
 				FEBADF24285E2D1900022DA2 /* UserDetailStatisticsView.swift in Sources */,
 				FEBADF25285E2D1900022DA2 /* UserDetailUseCase.swift in Sources */,
 				FEBADF28285E2D1900022DA2 /* UserDetailViewModel.swift in Sources */,
-				FEBADF2D285E2D8B00022DA2 /* NetworkError.swift in Sources */,
 				FEBADF2B285E2D5100022DA2 /* User.swift in Sources */,
 				FEBADF26285E2D1900022DA2 /* UserDetailViewController.swift in Sources */,
 			);
@@ -387,6 +446,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEBADF74285E32B400022DA2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEBADF75285E32B400022DA2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEBADF74285E32B400022DA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FEBADF77285E32B400022DA2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEBADF74285E32B400022DA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEBADF03285E2CC500022DA2 /* Project object */;
 }
