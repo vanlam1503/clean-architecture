@@ -8,11 +8,6 @@
 import Foundation
 import UserDetail
 
-protocol UseCaseProvider {
-    func makeUserUseCase() -> UserUseCase
-    func makeUserDetailUseCase() -> UserDetailUseCase
-}
-
 struct DefaultsUseCaseProvider: UseCaseProvider {
 
     private let apiClient: ApiClient

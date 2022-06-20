@@ -49,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FE908FA228600196001E7ABA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE908F9E28600195001E7ABA /* Users.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FE908F9428600186001E7ABA;
+			remoteInfo = Users;
+		};
 		FEBADE75285DB77800022DA2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FE9CE399285A09800014B2CF /* Project object */;
@@ -103,6 +110,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE908F9E28600195001E7ABA /* Users.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Users.xcodeproj; path = GithubUser/Users/Users.xcodeproj; sourceTree = SOURCE_ROOT; };
 		FE9CE3A1285A09800014B2CF /* GithubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9CE3A4285A09800014B2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE9CE3AD285A09830014B2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,6 +182,14 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		FE908F9F28600195001E7ABA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE908FA328600196001E7ABA /* Users.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FE9CE398285A09800014B2CF = {
 			isa = PBXGroup;
 			children = (
@@ -218,13 +234,14 @@
 		FE9CE3BC285A09B70014B2CF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				FE908F9E28600195001E7ABA /* Users.xcodeproj */,
 				FEBADF16285E2CD400022DA2 /* UserDetail.xcodeproj */,
-				FE9CE3BD285A09BE0014B2CF /* UsersVC */,
+				FE9CE3BD285A09BE0014B2CF /* UsersVC1 */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		FE9CE3BD285A09BE0014B2CF /* UsersVC */ = {
+		FE9CE3BD285A09BE0014B2CF /* UsersVC1 */ = {
 			isa = PBXGroup;
 			children = (
 				FE9CE3FD285AAB6F0014B2CF /* Cell */,
@@ -234,7 +251,7 @@
 				FE9CE3B9285A09B10014B2CF /* UsersViewController.xib */,
 				FE9CE3E3285A201A0014B2CF /* UsersViewModel.swift */,
 			);
-			path = UsersVC;
+			path = UsersVC1;
 			sourceTree = "<group>";
 		};
 		FE9CE3BE285A0AA10014B2CF /* Service */ = {
@@ -471,6 +488,10 @@
 					ProjectRef = FEBADF16285E2CD400022DA2 /* UserDetail.xcodeproj */;
 				},
 				{
+					ProductGroup = FE908F9F28600195001E7ABA /* Products */;
+					ProjectRef = FE908F9E28600195001E7ABA /* Users.xcodeproj */;
+				},
+				{
 					ProductGroup = FEBADF93285E334D00022DA2 /* Products */;
 					ProjectRef = FEBADF92285E334D00022DA2 /* ViewModelType.xcodeproj */;
 				},
@@ -484,6 +505,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		FE908FA328600196001E7ABA /* Users.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Users.framework;
+			remoteRef = FE908FA228600196001E7ABA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FEBADF1B285E2CD500022DA2 /* UserDetail.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;

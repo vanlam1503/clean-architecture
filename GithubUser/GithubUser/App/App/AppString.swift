@@ -14,4 +14,6 @@ extension App {
 extension App.String {
     
     public struct UserDetail {}
+    
+    public struct Users {}
 }

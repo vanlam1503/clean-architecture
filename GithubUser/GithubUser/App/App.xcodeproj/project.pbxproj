@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE908FC72860036C001E7ABA /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE908FC62860036C001E7ABA /* UseCaseProvider.swift */; };
 		FEBADFAB285E347900022DA2 /* App.h in Headers */ = {isa = PBXBuildFile; fileRef = FEBADFAA285E347900022DA2 /* App.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEBADFB8285E34A400022DA2 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADFB7285E34A400022DA2 /* App.swift */; };
 		FEBADFBA285E34B500022DA2 /* AppString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBADFB9285E34B500022DA2 /* AppString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE908FC62860036C001E7ABA /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		FEBADFA7285E347900022DA2 /* App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBADFAA285E347900022DA2 /* App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
 		FEBADFB7285E34A400022DA2 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 				FEBADFAA285E347900022DA2 /* App.h */,
 				FEBADFB7285E34A400022DA2 /* App.swift */,
 				FEBADFB9285E34B500022DA2 /* AppString.swift */,
+				FE908FC62860036C001E7ABA /* UseCaseProvider.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEBADFBA285E34B500022DA2 /* AppString.swift in Sources */,
+				FE908FC72860036C001E7ABA /* UseCaseProvider.swift in Sources */,
 				FEBADFB8285E34A400022DA2 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
