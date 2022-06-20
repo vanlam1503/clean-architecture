@@ -58,7 +58,7 @@ final class ApiClient: ApiClientProtocol {
                 completion(.failure(.disconnect))
                 return nil
             }
-            self.request = manager.request(router).response { response in
+            self.request = manager.request(router).response(queue: .global(qos: .background)) { response in
                 guard NetworkReachabilityManager()?.isReachable == true else {
                     completion(.failure(.disconnect))
                     return
