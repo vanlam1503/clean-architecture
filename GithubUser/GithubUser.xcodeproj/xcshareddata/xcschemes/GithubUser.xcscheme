@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE581CB9285C3D7B00575131"
+               BlueprintIdentifier = "FEBADE70285DB77800022DA2"
                BuildableName = "GithubUserTests.xctest"
                BlueprintName = "GithubUserTests"
                ReferencedContainer = "container:GithubUser.xcodeproj">
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FEBADE70285DB77800022DA2"
-               BuildableName = "GithubUser1Tests.xctest"
+               BuildableName = "GithubUserTests.xctest"
                BlueprintName = "GithubUserTests"
                ReferencedContainer = "container:GithubUser.xcodeproj">
             </BuildableReference>
