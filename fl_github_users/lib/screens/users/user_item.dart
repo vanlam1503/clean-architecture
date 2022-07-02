@@ -13,7 +13,7 @@ class _UserItem extends State<UserItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+      padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
         height: 60,
         child: Row(
       children: [

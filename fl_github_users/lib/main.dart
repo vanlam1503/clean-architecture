@@ -1,4 +1,4 @@
-import 'package:fl_github_users/users/user_list.dart';
+import 'package:fl_github_users/screens/users/user_list.dart';
 import 'package:flutter/material.dart';
 
 void main() {

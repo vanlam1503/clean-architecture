@@ -1,4 +1,5 @@
-import 'package:fl_github_users/users/user_item.dart';
+import 'package:fl_github_users/screens/users/user_item.dart';
+import 'package:fl_github_users/service/api_client.dart';
 import 'package:flutter/material.dart';
 
 class UserList extends StatefulWidget {
@@ -11,6 +12,9 @@ class UserList extends StatefulWidget {
 class _UserList extends State<UserList> {
   @override
   void initState() {
+    var router = user
+    // var apiClient = ApiClient();
+    // apiClient.fetch();
   }
 
   @override
@@ -33,22 +37,5 @@ class _UserList extends State<UserList> {
       }, itemCount: 10),
     );
   }
-  //
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: const Text("Users"),
-  //     ),
-  //     body: ListView.builder(itemCount: 10,
-  //     itemBuilder: (context, index) {
-  //       return Container(
-  //         height: 80,
-  //         color: Colors.white,
-  //         child: UserItem(),
-  //       );
-  //     }),
-  //   );
-  // }
 }
 
