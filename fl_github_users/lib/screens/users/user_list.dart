@@ -1,5 +1,6 @@
 import 'package:fl_github_users/api_client/api_client.dart';
 import 'package:fl_github_users/model/user_dto.dart';
+import 'package:fl_github_users/screens/user_detail/user_detail.dart';
 import 'package:fl_github_users/screens/users/user_item.dart';
 import 'package:fl_github_users/service/user_service.dart';
 import 'package:flutter/material.dart';
@@ -36,9 +37,18 @@ class _UserList extends State<UserList> {
             if (snapShot.hasData) {
               return ListView.separated(
                   itemBuilder: (context, index) {
-                    return SizedBox(
-                      height: 80,
-                      child: UserItem(user: snapShot.requireData[index]),
+                    return GestureDetector(
+                      child: SizedBox(
+                        height: 80,
+                        child: UserItem(user: snapShot.requireData[index]),
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (ctx) => UserDetail(
+                                    user: snapShot.requireData[index])));
+                      },
                     );
                   },
                   separatorBuilder: (context, index) {
@@ -54,7 +64,6 @@ class _UserList extends State<UserList> {
               );
             }
           },
-        )
-    );
+        ));
   }
 }

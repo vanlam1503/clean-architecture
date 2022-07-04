@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class UserItem extends StatefulWidget {
   final UserDTO user;
-  const UserItem({Key? key, required this.user}) : super(key: key);
+
+  const UserItem({Key? key, required this.user}): super(key: key);
 
   @override
   State<StatefulWidget> createState() => _UserItem();
