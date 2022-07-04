@@ -10,7 +10,7 @@ class UsersRouter implements Router {
   @override
   Method get method => Method.get;
   @override
-  Map<String, String> get headers => { "": "" };
+  Map<String, String>? headers;
 }
 
 class UserService {

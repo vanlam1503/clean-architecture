@@ -7,7 +7,7 @@ enum Method {
 abstract class Router {
   String get uri;
   Method get method;
-  Map<String, String> get headers;
+  Map<String, String>? get headers;
 }
 
 class ApiClient {
@@ -15,7 +15,7 @@ class ApiClient {
   final http.Client _client = http.Client();
 
   Future<http.Response> fetch(Router router) async {
-    var response = await _client.get(Uri.parse(router.uri));
+    var response = await _client.get(Uri.parse(router.uri), headers: router.headers);
     return response;
   }
 }

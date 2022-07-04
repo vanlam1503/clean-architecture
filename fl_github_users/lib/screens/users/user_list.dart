@@ -2,7 +2,7 @@ import 'package:fl_github_users/api_client/api_client.dart';
 import 'package:fl_github_users/model/user_dto.dart';
 import 'package:fl_github_users/screens/user_detail/user_detail.dart';
 import 'package:fl_github_users/screens/users/user_item.dart';
-import 'package:fl_github_users/service/user_service.dart';
+import 'package:fl_github_users/service/users_service.dart';
 import 'package:flutter/material.dart';
 
 class UserList extends StatefulWidget {
