@@ -6,7 +6,7 @@ import 'package:fl_github_users/model/user_detail_dto.dart';
 
 class UserDetailRouter implements Router {
 
-  final String id;
+  final int id;
   const UserDetailRouter({required this.id});
 
   @override
@@ -24,7 +24,7 @@ class UserDetailService {
   final ApiClient apiClient;
   const UserDetailService({required this.apiClient});
 
-  Future<UserDetailDTO> fetch(String id) async {
+  Future<UserDetailDTO> fetch(int id) async {
     var router = UserDetailRouter(id: id);
     var response = await apiClient.fetch(router);
     var body = jsonDecode(response.body);

@@ -3,7 +3,7 @@ class UserDetailDTO {
   final String githubProfile;
   final String avatar;
   final String? location;
-  final String bio;
+  final String? bio;
   final int publicRepos;
   final int followers;
   final int following;

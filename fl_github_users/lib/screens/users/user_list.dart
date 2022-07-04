@@ -23,9 +23,6 @@ class _UserList extends State<UserList> {
   }
 
   @override
-  void initState() {}
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(

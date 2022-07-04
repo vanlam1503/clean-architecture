@@ -1,6 +1,9 @@
 
+import 'package:fl_github_users/api_client/api_client.dart';
+import 'package:fl_github_users/model/user_detail_dto.dart';
 import 'package:fl_github_users/model/user_dto.dart';
 import 'package:fl_github_users/screens/users/user_item.dart';
+import 'package:fl_github_users/service/user_detail_service.dart';
 import 'package:flutter/material.dart';
 
 class UserDetail extends StatefulWidget {
@@ -14,9 +17,24 @@ class UserDetail extends StatefulWidget {
 
 class _UserDetail extends State<UserDetail> {
 
+  UserDetailService? userDetailService;
+
+  // Define
   double width(BuildContext ctx) => MediaQuery.of(ctx).size.width;
   double height(BuildContext ctx) => MediaQuery.of(ctx).size.height;
   static const widgetCenterInsets = EdgeInsets.all(10);
+
+  @override
+  void initState() {
+    super.initState();
+    ApiClient apiClient = ApiClient();
+    userDetailService = UserDetailService(apiClient: apiClient);
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    userDetailService = null;
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -24,15 +42,23 @@ class _UserDetail extends State<UserDetail> {
       appBar: AppBar(
         title: const Text("User detail"),
       ),
-      body: Container(
-
-        child: Column(
-          children: [
-            header(),
-            center(context), 
-            footer(context)
-          ],
-        ),
+      body: FutureBuilder<UserDetailDTO>(
+        future: userDetailService?.fetch(widget.user.id),
+        builder: (context, snapShot) {
+          if (snapShot.hasData) {
+            return Column(
+                children: [
+                  header(),
+                  center(context, snapShot.requireData),
+                  footer(context, snapShot.requireData)
+                ],
+              );
+          } else {
+            return const Center(
+              child: Text("No data"),
+            );
+          }
+        },
       ),
     );
   }
@@ -43,7 +69,7 @@ class _UserDetail extends State<UserDetail> {
         child: UserItem(user: widget.user));
   }
 
-  Widget center(BuildContext context) {
+  Widget center(BuildContext context, UserDetailDTO userDetailDTO) {
     return Container(
       padding: widgetCenterInsets,
       height: 60,
@@ -52,25 +78,25 @@ class _UserDetail extends State<UserDetail> {
         crossAxisAlignment: CrossAxisAlignment.start,
         textDirection: TextDirection.ltr,
         children: [
-          Flexible(
-            child: Text("AboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutAboutsAboutAboutAboutAboutAboutAboutAboutAboutAbout",
+          const Flexible(
+            child: Text("About",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
               style: TextStyle(fontSize: 16,
                   fontWeight: FontWeight.w700)),
           ),
-          Flexible(child:  Text("About",
+          Flexible(child:  Text(userDetailDTO.bio.toString(),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400))),
+              style: const TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400))),
         ],
       ),
     );
   }
 
-  Widget footer(BuildContext context) {
+  Widget footer(BuildContext context, UserDetailDTO userDetailDTO) {
     return Container(
       width: width(context),
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -81,13 +107,13 @@ class _UserDetail extends State<UserDetail> {
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
             child: const Flexible(child: Text("Stat", maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left)),
           ),
-          Container(
+          SizedBox(
             height: 80,
             child: Row(
               children: [
-                footerItem(context),
-                footerItem(context),
-                footerItem(context),
+                footerItem(context, "PUBLIC REPO", userDetailDTO.publicRepos),
+                footerItem(context, "FOLLOWERS", userDetailDTO.followers),
+                footerItem(context, "FOLLOWING", userDetailDTO.following),
               ],
             ),
           )
@@ -96,8 +122,8 @@ class _UserDetail extends State<UserDetail> {
     );
   }
 
-  Widget footerItem(BuildContext context) {
-    return Container(
+  Widget footerItem(BuildContext context, String title, int number) {
+    return SizedBox(
       width: (width(context) - 20) / 3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,21 +131,21 @@ class _UserDetail extends State<UserDetail> {
           Flexible(
             child: Container(
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-              child: const Text("90",
+              child: Text("$number",
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.red,
                       fontSize: 16,
                       fontWeight: FontWeight.w500)),
             ),
           ),
-          const Flexible(child:  Text("About",
+          Flexible(child:  Text(title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.left,
-              style: TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400))),        ],
+              style: const TextStyle(color: Colors.grey, fontSize: 14, fontWeight: FontWeight.w400)))],
       ),
     );
   }
