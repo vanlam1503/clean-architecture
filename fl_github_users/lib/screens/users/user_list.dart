@@ -31,7 +31,7 @@ class _UserList extends State<UserList> {
         body: FutureBuilder<Result<List<UserDTO>>>(
           future: userService.fetch(),
           builder: (ctx, snapShot) {
-            if (snapShot.hasData) {
+            if ((snapShot.hasData) && (snapShot.requireData.value != null)) {
               return ListView.separated(
                   itemBuilder: (context, index) {
                     return GestureDetector(

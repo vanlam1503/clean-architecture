@@ -20,10 +20,17 @@ class ApiClient {
   Future<Result<String>> fetch(Router router) async {
     var response = await _client.get(Uri.parse(router.uri), headers: router.headers);
     try {
-      if (response.statusCode == 200) {
-        return Result.success(response.body);
-      } else {
-        throw Result.failure(NetworkError.unknown(1000));
+      switch (response.statusCode) {
+        case 200:
+          return Result.success(response.body);
+        case -1005:
+          throw Result.failure(NetworkError.disconnect());
+        case -1001:
+          throw Result.failure(NetworkError.timeout());
+        case -999:
+          throw Result.failure(NetworkError.cancel());
+        default:
+          throw Result.failure(NetworkError.unknown(response.statusCode));
       }
     } catch (e) {
       throw Result.failure(NetworkError.unknown(1000));

@@ -32,8 +32,8 @@ class _UserDetail extends State<UserDetail> {
   }
   @override
   void dispose() {
-    super.dispose();
     userDetailService = null;
+    super.dispose();
   }
   
   @override
