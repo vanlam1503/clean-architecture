@@ -24,10 +24,12 @@ class UserDetailService {
   final ApiClient apiClient;
   const UserDetailService({required this.apiClient});
 
-  Future<UserDetailDTO> fetch(int id) async {
+  Future<Result<UserDetailDTO>> fetch(int id) async {
     var router = UserDetailRouter(id: id);
     var response = await apiClient.fetch(router);
-    var body = jsonDecode(response.body);
-    return UserDetailDTO.fromJSON(body);
+    var value = response.value;
+    var json = jsonDecode(value!);
+    var userDetail = UserDetailDTO.fromJSON(json);
+    return Result.success(userDetail);
    }
 }

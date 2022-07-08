@@ -18,15 +18,15 @@ class UserService {
   final ApiClient apiClient;
   const UserService({required this.apiClient});
 
-  Future<List<UserDTO>> fetch() async {
+  Future<Result<List<UserDTO>>> fetch() async {
     var router = UsersRouter();
     var response = await apiClient.fetch(router);
-    var body = jsonDecode(response.body);
+    var body = jsonDecode(response.value!);
     List<UserDTO> users = [];
     for (Map<String, dynamic> json in body) {
       var user = UserDTO.fromJSON(json);
       users.add(user);
     }
-    return users;
+    return Result.success(users);
   }
 }

@@ -28,7 +28,7 @@ class _UserList extends State<UserList> {
         appBar: AppBar(
           title: const Text("Users"),
         ),
-        body: FutureBuilder<List<UserDTO>>(
+        body: FutureBuilder<Result<List<UserDTO>>>(
           future: userService.fetch(),
           builder: (ctx, snapShot) {
             if (snapShot.hasData) {
@@ -37,14 +37,14 @@ class _UserList extends State<UserList> {
                     return GestureDetector(
                       child: SizedBox(
                         height: 80,
-                        child: UserItem(user: snapShot.requireData[index]),
+                        child: UserItem(user: snapShot.requireData.value![index]),
                       ),
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (ctx) => UserDetail(
-                                    user: snapShot.requireData[index])));
+                                    user: snapShot.requireData.value![index])));
                       },
                     );
                   },
@@ -54,7 +54,7 @@ class _UserList extends State<UserList> {
                       indent: 15,
                     );
                   },
-                  itemCount: snapShot.requireData.length);
+                  itemCount: snapShot.requireData.value!.length);
             } else {
               return const Center(
                 child: Text("No data"),

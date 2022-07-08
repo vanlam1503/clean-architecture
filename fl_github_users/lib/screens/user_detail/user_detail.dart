@@ -42,15 +42,15 @@ class _UserDetail extends State<UserDetail> {
       appBar: AppBar(
         title: const Text("User detail"),
       ),
-      body: FutureBuilder<UserDetailDTO>(
+      body: FutureBuilder<Result<UserDetailDTO>>(
         future: userDetailService?.fetch(widget.user.id),
         builder: (context, snapShot) {
           if (snapShot.hasData) {
             return Column(
                 children: [
                   header(),
-                  center(context, snapShot.requireData),
-                  footer(context, snapShot.requireData)
+                  center(context, snapShot.requireData.value!),
+                  footer(context, snapShot.requireData.value!)
                 ],
               );
           } else {
