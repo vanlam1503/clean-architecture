@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:http/http.dart' as http;
 
 enum Method {
@@ -13,10 +10,15 @@ abstract class Router {
   Map<String, String>? get headers;
 }
 
-class ApiClient {
+abstract class ApiClient {
+  Future<Result<String>> fetch(Router router);
+}
+
+class ApiClientImpl implements ApiClient {
 
   final http.Client _client = http.Client();
 
+  @override
   Future<Result<String>> fetch(Router router) async {
     var response = await _client.get(Uri.parse(router.uri), headers: router.headers);
     try {

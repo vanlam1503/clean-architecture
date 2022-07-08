@@ -23,11 +23,14 @@ class _UserDetail extends State<UserDetail> {
   double width(BuildContext ctx) => MediaQuery.of(ctx).size.width;
   double height(BuildContext ctx) => MediaQuery.of(ctx).size.height;
   static const widgetCenterInsets = EdgeInsets.all(10);
+  double footerHeight = 100;
+  static const footerInsets = EdgeInsets.fromLTRB(10, 0, 0, 10);
+  static const double statHeaderHeight = 40;
 
   @override
   void initState() {
     super.initState();
-    ApiClient apiClient = ApiClient();
+    ApiClientImpl apiClient = ApiClientImpl();
     userDetailService = UserDetailService(apiClient: apiClient);
   }
   @override
@@ -99,16 +102,17 @@ class _UserDetail extends State<UserDetail> {
   Widget footer(BuildContext context, UserDetailDTO userDetailDTO) {
     return Container(
       width: width(context),
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      height: footerHeight,
+      padding: footerInsets,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-            child: const Flexible(child: Text("Stat", maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left)),
+          const SizedBox(
+            height: statHeaderHeight,
+            child: Text("Stat", maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left),
           ),
           SizedBox(
-            height: 80,
+            height: footerHeight - footerInsets.bottom,
             child: Row(
               children: [
                 footerItem(context, "PUBLIC REPO", userDetailDTO.publicRepos),
@@ -124,7 +128,8 @@ class _UserDetail extends State<UserDetail> {
 
   Widget footerItem(BuildContext context, String title, int number) {
     return SizedBox(
-      width: (width(context) - 20) / 3,
+      width: (width(context) - footerInsets.left - footerInsets.right) / 3,
+      height: footerHeight - footerInsets.bottom,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

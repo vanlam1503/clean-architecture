@@ -17,7 +17,7 @@ class _UserList extends State<UserList> {
   _UserList({required this.userService});
 
   factory _UserList.instance() {
-    ApiClient apiClient = ApiClient();
+    ApiClientImpl apiClient = ApiClientImpl();
     UserService userService = UserService(apiClient: apiClient);
     return _UserList(userService: userService);
   }
