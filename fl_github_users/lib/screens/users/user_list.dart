@@ -2,6 +2,7 @@ import 'package:fl_github_users/api_client/api_client.dart';
 import 'package:fl_github_users/model/user_dto.dart';
 import 'package:fl_github_users/screens/user_detail/user_detail.dart';
 import 'package:fl_github_users/screens/users/user_item.dart';
+import 'package:fl_github_users/screens/users/user_list_view_model.dart';
 import 'package:fl_github_users/service/users_service.dart';
 import 'package:flutter/material.dart';
 
@@ -13,13 +14,26 @@ class UserList extends StatefulWidget {
 }
 
 class _UserList extends State<UserList> {
-  UserService userService;
-  _UserList({required this.userService});
+  UserListViewModel viewModel;
+  _UserList({required this.viewModel});
 
   factory _UserList.instance() {
     ApiClientImpl apiClient = ApiClientImpl();
-    UserService userService = UserService(apiClient: apiClient);
-    return _UserList(userService: userService);
+    UserServiceImpl userService = UserServiceImpl(apiClient);
+    UserListViewModel viewModel = UserListViewModel(userService: userService);
+    return _UserList(viewModel: viewModel);
+  }
+
+  @override
+  void initState() {
+    viewModel.sink();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    viewModel.dispose();
+    super.dispose();
   }
 
   @override
@@ -28,8 +42,8 @@ class _UserList extends State<UserList> {
         appBar: AppBar(
           title: const Text("Users"),
         ),
-        body: FutureBuilder<Result<List<UserDTO>>>(
-          future: userService.fetch(),
+        body: StreamBuilder<Result<List<UserDTO>>>(
+          stream: viewModel.result,
           builder: (ctx, snapShot) {
             if ((snapShot.hasData) && (snapShot.requireData.value != null)) {
               return ListView.separated(

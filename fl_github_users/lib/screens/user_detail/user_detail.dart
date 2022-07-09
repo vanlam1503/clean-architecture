@@ -2,6 +2,7 @@
 import 'package:fl_github_users/api_client/api_client.dart';
 import 'package:fl_github_users/model/user_detail_dto.dart';
 import 'package:fl_github_users/model/user_dto.dart';
+import 'package:fl_github_users/screens/user_detail/user_detail_view_model.dart';
 import 'package:fl_github_users/screens/users/user_item.dart';
 import 'package:fl_github_users/service/user_detail_service.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +13,20 @@ class UserDetail extends StatefulWidget {
   const UserDetail({Key? key, required this.user}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _UserDetail();
+  State<StatefulWidget> createState() => _UserDetail.instance();
 }
 
 class _UserDetail extends State<UserDetail> {
 
-  UserDetailService? userDetailService;
+  UserDetailViewModel viewModel;
+  _UserDetail({required this.viewModel});
+
+  factory _UserDetail.instance() {
+    var apiClient = ApiClientImpl();
+    var service = UserDetailServiceImpl(apiClient);
+    var viewModel = UserDetailViewModel(service: service);
+    return _UserDetail(viewModel: viewModel);
+  }
 
   // Define
   double width(BuildContext ctx) => MediaQuery.of(ctx).size.width;
@@ -29,13 +38,12 @@ class _UserDetail extends State<UserDetail> {
 
   @override
   void initState() {
+    viewModel.sink(widget.user.id);
     super.initState();
-    ApiClientImpl apiClient = ApiClientImpl();
-    userDetailService = UserDetailService(apiClient: apiClient);
   }
   @override
   void dispose() {
-    userDetailService = null;
+    viewModel.dispose();
     super.dispose();
   }
   
@@ -45,8 +53,8 @@ class _UserDetail extends State<UserDetail> {
       appBar: AppBar(
         title: const Text("User detail"),
       ),
-      body: FutureBuilder<Result<UserDetailDTO>>(
-        future: userDetailService?.fetch(widget.user.id),
+      body: StreamBuilder<Result<UserDetailDTO>>(
+        stream: viewModel.result,
         builder: (context, snapShot) {
           if (snapShot.hasData) {
             return Column(
@@ -112,7 +120,7 @@ class _UserDetail extends State<UserDetail> {
             child: Text("Stat", maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.left),
           ),
           SizedBox(
-            height: footerHeight - footerInsets.bottom,
+            height: footerHeight - footerInsets.bottom - statHeaderHeight,
             child: Row(
               children: [
                 footerItem(context, "PUBLIC REPO", userDetailDTO.publicRepos),
@@ -129,7 +137,6 @@ class _UserDetail extends State<UserDetail> {
   Widget footerItem(BuildContext context, String title, int number) {
     return SizedBox(
       width: (width(context) - footerInsets.left - footerInsets.right) / 3,
-      height: footerHeight - footerInsets.bottom,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

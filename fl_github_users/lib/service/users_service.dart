@@ -13,14 +13,19 @@ class UsersRouter implements Router {
   Map<String, String>? headers;
 }
 
-class UserService {
+abstract class UserService {
+  Future<Result<List<UserDTO>>> fetch();
+}
 
-  final ApiClient apiClient;
-  const UserService({required this.apiClient});
+class UserServiceImpl extends UserService {
 
+  final ApiClient _apiClient;
+  UserServiceImpl(this._apiClient);
+
+  @override
   Future<Result<List<UserDTO>>> fetch() async {
     var router = UsersRouter();
-    var response = await apiClient.fetch(router);
+    var response = await _apiClient.fetch(router);
     var body = jsonDecode(response.value!);
     List<UserDTO> users = [];
     for (Map<String, dynamic> json in body) {

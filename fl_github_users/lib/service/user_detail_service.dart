@@ -19,14 +19,19 @@ class UserDetailRouter implements Router {
   String get uri => "https://api.github.com/users/$id";
 }
 
-class UserDetailService {
+abstract class UserDetailService {
+  Future<Result<UserDetailDTO>> fetch(int id);
+}
 
-  final ApiClient apiClient;
-  const UserDetailService({required this.apiClient});
+class UserDetailServiceImpl extends UserDetailService {
 
+  final ApiClient _apiClient;
+  UserDetailServiceImpl(this._apiClient);
+
+  @override
   Future<Result<UserDetailDTO>> fetch(int id) async {
     var router = UserDetailRouter(id: id);
-    var response = await apiClient.fetch(router);
+    var response = await _apiClient.fetch(router);
     var value = response.value;
     var json = jsonDecode(value!);
     var userDetail = UserDetailDTO.fromJSON(json);
