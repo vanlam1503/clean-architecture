@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ViewModelType/ViewModelType.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Extensions/Extensions.xcodeproj">
    </FileRef>
    <FileRef
