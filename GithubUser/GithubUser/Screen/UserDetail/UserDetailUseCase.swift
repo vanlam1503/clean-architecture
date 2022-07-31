@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Extensions
 
 protocol UserDetailUseCase {
     func fetchUserDetail(login: String) -> Observable<Result<UserDTO, NetworkError>>

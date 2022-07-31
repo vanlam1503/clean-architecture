@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Extensions
 
 /// Requirement:
 /// Display username, github profile’s link and avatar

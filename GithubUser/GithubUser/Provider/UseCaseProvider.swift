@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Extensions
 
 protocol UseCaseProvider {
     func makeUserUseCase() -> UserUseCase

@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import Foundation
+import Extensions
 
 protocol GithubServiceRepository {
     func fetchUsers() -> Observable<Result<[UserDTO], NetworkError>>

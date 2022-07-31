@@ -6,11 +6,7 @@
 //
 
 import UIKit
-
-protocol ResponseCache {
-    static func store<T>(key: String, value: T) where T: Encodable
-    static func get<U>(key: String) -> U? where U: Decodable
-}
+import Extensions
 
 struct Cache: ResponseCache {
 
